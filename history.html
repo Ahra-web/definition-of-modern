@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Modern - Understanding Modern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5CF6',
+                        secondary: '#EC4899',
+                    },
+                    fontFamily: {
+                        'outfit': ['Outfit', 'sans-serif'],
+                        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'slide-in': 'slideIn 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            background-attachment: fixed;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(to right, #8B5CF6, #EC4899);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .animate-delay-100 { animation-delay: 100ms; }
+        .animate-delay-200 { animation-delay: 200ms; }
+        .animate-delay-300 { animation-delay: 300ms; }
+        .animate-delay-400 { animation-delay: 400ms; }
+        .animate-delay-500 { animation-delay: 500ms; }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .gradient-animate {
+            background: linear-gradient(-45deg, #9b9e3a, #d8843f, #9b9e3a, #d8843f);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-12 px-4 sm:px-6 lg:px-8 font-jakarta gradient-animate">
+    <!-- Navigation Bar -->
+    <nav class="glass-card fixed top-0 left-0 right-0 z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 rounded-b-2xl">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="text-white text-xl font-outfit font-bold">Modern</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-white text-sm font-medium">Definition</a>
+                <a href="history.html" class="nav-link text-white text-sm font-medium">History</a>
+                <a href="popularity.html" class="nav-link text-white hover:text-white text-sm font-medium">Popularity</a>
+                <a href="types.html" class="nav-link text-white hover:text-white text-sm font-medium">Types</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-gray-300 hover:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto mt-20 animate-fade-in">
+        <div class="glass-card rounded-3xl shadow-2xl p-8 animate-slide-up">
+            <h1 class="text-4xl font-bold text-center text-white mb-12 pb-4 border-b border-white/20 font-outfit animate-slide-in">
+                History of Modern Design
+            </h1>
+            
+            <div class="space-y-8">
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 animate-slide-up animate-delay-100">
+                    <h2 class="text-2xl font-semibold text-white mb-4 font-outfit">Early Modernism</h2>
+                    <p class="text-white mb-4">The roots of modern design can be traced back to:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start animate-slide-in animate-delay-200">
+                            <span class="text-primary mr-2">•</span>
+                            <span class="text-white">The Industrial Revolution (1760-1840)</span>
+                        </li>
+                        <li class="flex items-start animate-slide-in animate-delay-300">
+                            <span class="text-primary mr-2">•</span>
+                            <span class="text-white">Bauhaus Movement (1919-1933)</span>
+                        </li>
+                        <li class="flex items-start animate-slide-in animate-delay-400">
+                            <span class="text-primary mr-2">•</span>
+                            <span class="text-white">International Style (1920s-1930s)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 animate-slide-up animate-delay-200">
+                    <h2 class="text-2xl font-semibold text-white mb-4 font-outfit">Key Milestones</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start animate-slide-in animate-delay-300">
+                            <span class="inline-block px-4 py-1.5 bg-gradient-to-r from-purple-500/80 to-pink-400/80 text-white rounded-full text-sm font-medium mr-3 backdrop-blur-sm hover:scale-110 transition-transform">1920s</span>
+                            <span class="text-white">Art Deco and Modernist Architecture</span>
+                        </li>
+                        <li class="flex items-start animate-slide-in animate-delay-400">
+                            <span class="inline-block px-4 py-1.5 bg-gradient-to-r from-indigo-500/80 to-purple-400/80 text-white rounded-full text-sm font-medium mr-3 backdrop-blur-sm hover:scale-110 transition-transform">1950s</span>
+                            <span class="text-white">Mid-Century Modern Movement</span>
+                        </li>
+                        <li class="flex items-start animate-slide-in animate-delay-500">
+                            <span class="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-500/80 to-indigo-400/80 text-white rounded-full text-sm font-medium mr-3 backdrop-blur-sm hover:scale-110 transition-transform">1980s</span>
+                            <span class="text-white">Postmodern Design Era</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 animate-slide-up animate-delay-300">
+                    <h2 class="text-2xl font-semibold text-white mb-4 font-outfit">Evolution</h2>
+                    <p class="text-white leading-relaxed animate-fade-in animate-delay-400">
+                        Modern design has continuously evolved, adapting to technological advancements and cultural changes. From the functional simplicity of early modernism to today's digital-first approach, the journey reflects our changing relationship with technology and aesthetics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
